@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class Main extends Application {
     @Override
@@ -18,9 +19,28 @@ public class Main extends Application {
         Font font1 = Font.loadFont(getClass().getResourceAsStream("fonts/Play-Regular.ttf"), 30);
         Font font2 = Font.loadFont(getClass().getResourceAsStream("fonts/Play-Regular.ttf"), 40);
         Font font3 = Font.loadFont(getClass().getResourceAsStream("fonts/Play-Regular.ttf"), 15);
-        //Image lira_image = new Image(getClass().getResourceAsStream("/images/myimage.png"));
+        Font font4 = Font.loadFont(getClass().getResourceAsStream("fonts/Play-Bold.ttf"), 30);
+        Font font5 = Font.loadFont(getClass().getResourceAsStream("fonts/Play-Regular.ttf"), 20);
+        Font font6 = Font.loadFont(getClass().getResourceAsStream("fonts/Play-Bold.ttf"), 15);
+        Image lira_image = new Image(getClass().getResourceAsStream("src/lira.png"));
         
         // ------------------------------------------------------------
+        // Info Labels
+        Label program_label = new Label("Turkish Lira Converter");
+        program_label.setFont(font4);
+        
+        Label data_source_label = new Label("XE.com Currency");
+        data_source_label.setFont(font5);
+        
+        VBox info_box = new VBox(10);
+        info_box.getChildren().addAll(program_label, data_source_label);
+        info_box.setAlignment(javafx.geometry.Pos.CENTER);
+        
+        // TL Image
+        ImageView image_view = new ImageView(lira_image);
+        image_view.setFitWidth(150);
+        image_view.setPreserveRatio(true);
+        
         // TL Label
         Label tl_label = new Label("37.495513");
         tl_label.setFont(font2);
@@ -38,13 +58,13 @@ public class Main extends Application {
 
 		/* labels */
 		Label usd_label = new Label("USD");
-		usd_label.setFont(font3);
+		usd_label.setFont(font6);
 		Label eur_label = new Label("EUR");
-		eur_label.setFont(font3);
+		eur_label.setFont(font6);
 		Label gbp_label = new Label("GBP");
-		gbp_label.setFont(font3);
+		gbp_label.setFont(font6);
 		Label jpy_label = new Label("JPY");
-		jpy_label.setFont(font3);
+		jpy_label.setFont(font6);
 		
 		/* buttons styles */
 		usd_button.setShape(new Circle(50));
@@ -81,8 +101,8 @@ public class Main extends Application {
         // ------------------------------------------------------------
         
         // mainbox
-        VBox mainbox = new VBox(125);
-        mainbox.getChildren().addAll(tl_label_box, currencies_box);
+        VBox mainbox = new VBox(50);
+        mainbox.getChildren().addAll(info_box, image_view, tl_label_box, currencies_box);
         mainbox.setAlignment(javafx.geometry.Pos.CENTER);
         
         // root Properties
@@ -91,7 +111,7 @@ public class Main extends Application {
         
         Scene scene = new Scene(root,400, 600);
         primaryStage.setTitle("Turkish Lira Converter");
-        primaryStage.getIcons().add(new Image("src/tlconverter-icon.png"));
+        primaryStage.getIcons().add(new Image("src/lira.png"));
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
