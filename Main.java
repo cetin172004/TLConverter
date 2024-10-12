@@ -5,7 +5,7 @@ import javafx.stage.Stage;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
+import javafx.scene.control.Button;
 
 public class Main extends Application {
     @Override
@@ -23,13 +23,24 @@ public class Main extends Application {
         
         // ------------------------------------------------------------
         // Other Currencies
-        HBox currencies_box = new HBox(10);
+		Button usd_button = new Button("$");
+		Button eur_button = new Button("€");
+		Button gbp_button = new Button("£");
+		Button jpy_button = new Button("¥");
+
+        HBox currencies_box = new HBox(30);
+        currencies_box.getChildren().addAll(usd_button, eur_button, gbp_button, jpy_button);
+        currencies_box.setAlignment(javafx.geometry.Pos.CENTER);
         
         // ------------------------------------------------------------
         
+        // mainbox
+        VBox mainbox = new VBox(200);
+        mainbox.getChildren().addAll(tl_label_box, currencies_box);
+        mainbox.setAlignment(javafx.geometry.Pos.CENTER);
         
         // root Properties
-        root.getChildren().addAll(tl_label_box, currencies_box);
+        root.getChildren().addAll(mainbox);
         root.setStyle("-fx-background-color: #F6F1F1;");
         
         Scene scene = new Scene(root,600, 500);
@@ -42,3 +53,8 @@ public class Main extends Application {
         launch(args);
     }
 }
+
+
+
+
+
