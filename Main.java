@@ -10,6 +10,10 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import java.io.IOException;
+import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 public class Main extends Application {
     @Override
@@ -96,7 +100,78 @@ public class Main extends Application {
 		VBox jpy_box = new VBox(10);
 		jpy_box.getChildren().addAll(jpy_button, jpy_label);
 		jpy_box.setAlignment(javafx.geometry.Pos.CENTER);
-	
+		
+		/* button actions */
+		usd_button.setOnAction(event -> {
+            try {
+				FileWriter writer = new FileWriter("currency_data");
+				writer.write("usd");
+				writer.close();
+				ProcessBuilder processBuilder = new ProcessBuilder("python3", "get_values.py");
+				Process process = processBuilder.start();
+				process.waitFor();
+			
+				BufferedReader br = new BufferedReader(new FileReader("value_data"));
+				System.out.println(br.readLine());
+			
+			} catch (IOException | InterruptedException e) {
+				e.printStackTrace();
+			}
+        });
+        
+        eur_button.setOnAction(event -> {
+            try {
+				FileWriter writer = new FileWriter("currency_data");
+				writer.write("eur");
+				writer.close();
+				ProcessBuilder processBuilder = new ProcessBuilder("python3", "get_values.py");
+				Process process = processBuilder.start();
+				process.waitFor();
+				
+				BufferedReader br = new BufferedReader(new FileReader("value_data"));
+				System.out.println(br.readLine());
+			
+			} catch (IOException | InterruptedException e) {
+				e.printStackTrace();
+			}
+        });
+        
+        gbp_button.setOnAction(event -> {
+            try {
+				FileWriter writer = new FileWriter("currency_data");
+				writer.write("gbp");
+				writer.close();
+				ProcessBuilder processBuilder = new ProcessBuilder("python3", "get_values.py");
+				Process process = processBuilder.start();
+				process.waitFor();
+
+				BufferedReader br = new BufferedReader(new FileReader("value_data"));
+				System.out.println(br.readLine());
+				
+			} catch (IOException | InterruptedException e) {
+				e.printStackTrace();
+			}
+        });
+        
+        jpy_button.setOnAction(event -> {
+            try {
+				FileWriter writer = new FileWriter("currency_data");
+				writer.write("jpy");
+				writer.close();
+				ProcessBuilder processBuilder = new ProcessBuilder("python3", "get_values.py");
+				Process process = processBuilder.start();
+				process.waitFor();
+
+				BufferedReader br = new BufferedReader(new FileReader("value_data"));
+				System.out.println(br.readLine());
+				
+			} catch (IOException | InterruptedException e) {
+				e.printStackTrace();
+			}
+        });
+        
+        
+		
 		/* currencies box */
         HBox currencies_box = new HBox(30);
         currencies_box.getChildren().addAll(usd_box, eur_box, gbp_box, jpy_box);
