@@ -33,7 +33,7 @@ public class Main extends Application {
         Label program_label = new Label("Turkish Lira Converter");
         program_label.setFont(font4);
         
-        Label data_source_label = new Label("XE.com Currency");
+        Label data_source_label = new Label("Powered by Google Finance");
         data_source_label.setFont(font5);
         
         VBox info_box = new VBox(10);
@@ -46,7 +46,7 @@ public class Main extends Application {
         image_view.setPreserveRatio(true);
         
         // TL Label
-        Label tl_label = new Label("37.495513");
+        Label tl_label = new Label("Click");
         tl_label.setFont(font2);
         
         HBox tl_label_box = new HBox(tl_label);
@@ -112,7 +112,7 @@ public class Main extends Application {
 				process.waitFor();
 			
 				BufferedReader br = new BufferedReader(new FileReader("value_data"));
-				System.out.println(br.readLine());
+				tl_label.setText(br.readLine());
 			
 			} catch (IOException | InterruptedException e) {
 				e.printStackTrace();
@@ -121,6 +121,7 @@ public class Main extends Application {
         
         eur_button.setOnAction(event -> {
             try {
+				FileWriter writer1 = new FileWriter("currency_data");
 				FileWriter writer = new FileWriter("currency_data");
 				writer.write("eur");
 				writer.close();
@@ -129,7 +130,7 @@ public class Main extends Application {
 				process.waitFor();
 				
 				BufferedReader br = new BufferedReader(new FileReader("value_data"));
-				System.out.println(br.readLine());
+				tl_label.setText(br.readLine());
 			
 			} catch (IOException | InterruptedException e) {
 				e.printStackTrace();
@@ -146,7 +147,7 @@ public class Main extends Application {
 				process.waitFor();
 
 				BufferedReader br = new BufferedReader(new FileReader("value_data"));
-				System.out.println(br.readLine());
+				tl_label.setText(br.readLine());
 				
 			} catch (IOException | InterruptedException e) {
 				e.printStackTrace();
@@ -163,14 +164,12 @@ public class Main extends Application {
 				process.waitFor();
 
 				BufferedReader br = new BufferedReader(new FileReader("value_data"));
-				System.out.println(br.readLine());
+				tl_label.setText(br.readLine());
 				
 			} catch (IOException | InterruptedException e) {
 				e.printStackTrace();
 			}
         });
-        
-        
 		
 		/* currencies box */
         HBox currencies_box = new HBox(30);
@@ -200,8 +199,3 @@ public class Main extends Application {
         launch(args);
     }
 }
-
-
-
-
-
