@@ -2,11 +2,11 @@
 Convert TRY to USD, EUR, GBP, JPY with just one click.
 
 ## Requirements
-JavaFX SDK
-python3-bs4
-python3-requests
+JavaFX SDK  
+python3-bs4  
+python3-requests  
 
-## How to Run ? 
+## How to Run
 git clone https://github.com/cetin172004/TRY-Converter.git  
 cd TRY-Converter  
 touch run.sh  
