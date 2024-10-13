@@ -12,7 +12,7 @@ cd TRY-Converter
 touch run.sh  
 nano run.sh  
   
-(copy&paste it)
+(copy&paste it)  
 javac --module-path your_sdk/lib --add-modules javafx.controls Main.java  
 java --module-path your_sdk/lib --add-modules javafx.controls Main  
   
