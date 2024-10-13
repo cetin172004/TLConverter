@@ -16,6 +16,6 @@ nano run.sh
 javac --module-path your_sdk/lib --add-modules javafx.controls Main.java  
 java --module-path your_sdk/lib --add-modules javafx.controls Main  
   
-bash run.sh
+bash run.sh  
 
 ![banner](https://github.com/user-attachments/assets/295da8f7-d5a9-4631-bf85-00ce762921e8)
