@@ -46,7 +46,7 @@ public class Main extends Application {
         image_view.setPreserveRatio(true);
         
         // TL Label
-        Label tl_label = new Label("Click");
+        Label tl_label = new Label("choose one");
         tl_label.setFont(font2);
         
         HBox tl_label_box = new HBox(tl_label);
@@ -193,7 +193,7 @@ public class Main extends Application {
         root.setStyle("-fx-background-color: white;");
         
         Scene scene = new Scene(root,400, 600);
-        primaryStage.setTitle("Turkish Lira Converter");
+        primaryStage.setTitle("TRYConverter");
         primaryStage.getIcons().add(new Image("src/lira.png"));
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
