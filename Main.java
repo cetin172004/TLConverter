@@ -178,9 +178,14 @@ public class Main extends Application {
         
         // ------------------------------------------------------------
         
+        // subbox
+        VBox subbox = new VBox(60);
+        subbox.getChildren().addAll(info_box, image_view);
+        subbox.setAlignment(javafx.geometry.Pos.CENTER);
+        
         // mainbox
         VBox mainbox = new VBox(50);
-        mainbox.getChildren().addAll(info_box, image_view, tl_label_box, currencies_box);
+        mainbox.getChildren().addAll(subbox, tl_label_box, currencies_box);
         mainbox.setAlignment(javafx.geometry.Pos.CENTER);
         
         // root Properties
