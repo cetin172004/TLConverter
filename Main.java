@@ -22,7 +22,7 @@ public class Main extends Application {
         Font font4 = Font.loadFont(getClass().getResourceAsStream("fonts/Play-Bold.ttf"), 30);
         Font font5 = Font.loadFont(getClass().getResourceAsStream("fonts/Play-Regular.ttf"), 20);
         Font font6 = Font.loadFont(getClass().getResourceAsStream("fonts/Play-Bold.ttf"), 15);
-        Image lira_image = new Image(getClass().getResourceAsStream("src/lira.png"));
+        Image lira_image = new Image(getClass().getResourceAsStream("src/lira2.png"));
         
         // ------------------------------------------------------------
         // Info Labels
@@ -69,12 +69,16 @@ public class Main extends Application {
 		/* buttons styles */
 		usd_button.setShape(new Circle(50));
 		usd_button.setFont(font1);
+		usd_button.setStyle("-fx-faint-focus-color: rgba(0, 0, 0, 0.5);");
 		eur_button.setShape(new Circle(50));
 		eur_button.setFont(font1);
+		eur_button.setStyle("-fx-faint-focus-color: rgba(0, 0, 0, 0.5);");
 		gbp_button.setShape(new Circle(50));
 		gbp_button.setFont(font1);
+		gbp_button.setStyle("-fx-faint-focus-color: rgba(0, 0, 0, 0.5);");
 		jpy_button.setShape(new Circle(50));
 		jpy_button.setFont(font1);
+		jpy_button.setStyle("-fx-faint-focus-color: rgba(0, 0, 0, 0.5);");
 
 		/* vertical boxes */
 		VBox usd_box = new VBox(10);
